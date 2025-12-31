@@ -1,0 +1,31 @@
+- Preparing Convex functions...
+
+✔ 20:58:42 Convex functions ready! (5.74s)
+- Preparing Convex functions...
+
+Temporary directory '/tmp' and project directory '/home/jword/Desktop/nextjs-16-full-stack/convex/_generated' are on different filesystems.
+  If you're running into errors with other tools watching the project directory, override the temporary directory location with the CONVEX_TMPDIR environment variable.
+  Be sure to pick a temporary directory that's on the same filesystem as your project.
+✔ 20:59:08 Convex functions ready! (7.59s)
+12/27/2025, 8:59:55 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '2025-12-28T02:59:55.354Z ERROR [Better Auth]: BetterAuthError' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 8:59:55 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '# SERVER_ERROR: ' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 8:59:55 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '2025-12-28T02:59:55.511Z ERROR [Better Auth]: BetterAuthError' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 8:59:55 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '# SERVER_ERROR: ' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 9:01:26 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '2025-12-28T03:01:26.986Z ERROR [Better Auth]: BetterAuthError' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 9:01:26 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '# SERVER_ERROR: ' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 9:01:27 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '2025-12-28T03:01:27.365Z ERROR [Better Auth]: BetterAuthError' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 9:01:27 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '# SERVER_ERROR: ' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+- Preparing Convex functions...
+
+✔ 21:02:50 Convex functions ready! (7.84s)
+12/27/2025, 9:03:17 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '2025-12-28T03:03:17.706Z ERROR [Better Auth]: BetterAuthError' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 9:03:17 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '# SERVER_ERROR: ' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 9:03:17 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '2025-12-28T03:03:17.905Z ERROR [Better Auth]: BetterAuthError' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+12/27/2025, 9:03:17 PM [CONVEX H(GET /api/auth/convex/token)] [ERROR] '# SERVER_ERROR: ' { [BetterAuthError: Failed to decrypt private key. Make sure the secret currently in use is the same as the one used to encrypt the private key. If you are using a different secret, either clean up your JWKS or disable private key encryption.] name: 'BetterAuthError', cause: undefined }
+- Preparing Convex functions...
+
+✔ 21:03:39 Convex functions ready! (7.16s)
+12/27/2025, 9:03:39 PM [CONVEX Q(clearJwks:listJwks)] Could not find public function for 'clearJwks:listJwks'. Did you forget to run `npx convex dev` or `npx convex deploy`?
+
+12/27/2025, 9:26:57 PM [CONVEX Q(clearJwks:listJwks)] Could not find public function for 'clearJwks:listJwks'. Did you forget to run `npx convex dev` or `npx convex deploy`?
+
