@@ -1,6 +1,5 @@
 'use client';
 
-import { createBlogAction } from '@/lib/actions';
 import { postSchema } from '@/lib/validators/blog';
 import { Button } from '@/components/ui/button';
 import {
@@ -25,8 +24,15 @@ import { Loader2 } from 'lucide-react';
 import { useTransition } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import z from 'zod';
+import { useMutation } from 'convex/react';
+import { api } from '@/convex/_generated/api';
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
+import { createPost } from '@/app/actions';
 
 const CreateRoute = () => {
+  const router = useRouter();
+  const mutation = useMutation(api.posts.createPost);
   const [isPending, startTransition] = useTransition();
 
   const form = useForm({
@@ -34,15 +40,12 @@ const CreateRoute = () => {
     defaultValues: {
       content: '',
       title: '',
-      image: undefined,
     },
   });
 
   function onSubmit(values: z.infer<typeof postSchema>) {
     startTransition(async () => {
-      console.log('hey this runs on the client side');
-
-      await createBlogAction(values);
+      await createPost(values);
     });
   }
   return (
@@ -101,7 +104,7 @@ const CreateRoute = () => {
               />
 
               <Controller
-                name='image'
+                name='imageUrl'
                 control={form.control}
                 render={({ field, fieldState }) => (
                   <Field>
@@ -123,7 +126,7 @@ const CreateRoute = () => {
                 )}
               />
 
-              <Button disabled={isPending}>
+              <Button className={'hover:bg-gray-400'} disabled={isPending}>
                 {isPending ? (
                   <>
                     <Loader2 className='size-4 animate-spin' />

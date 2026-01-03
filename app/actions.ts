@@ -8,7 +8,7 @@ import { redirect } from 'next/navigation';
 import { getToken } from '@/lib/auth-server';
 import { updateTag } from 'next/cache';
 
-export async function createBlogAction(values: z.infer<typeof postSchema>) {
+export async function createPost(values: z.infer<typeof postSchema>) {
   try {
     const parsed = postSchema.safeParse(values);
 
@@ -26,9 +26,9 @@ export async function createBlogAction(values: z.infer<typeof postSchema>) {
     const uploadResult = await fetch(imageUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': parsed.data.image.type,
+        'Content-Type': parsed.data.imageUrl?.type,
       },
-      body: parsed.data.image,
+      body: parsed.data.imageUrl,
     });
 
     if (!uploadResult.ok) {
@@ -41,9 +41,9 @@ export async function createBlogAction(values: z.infer<typeof postSchema>) {
     await fetchMutation(
       api.posts.createPost,
       {
-        body: parsed.data.content,
+        content: parsed.data.content,
         title: parsed.data.title,
-        imageStorageId: storageId,
+        imageUrl: storageId,
       },
       { token }
     );
