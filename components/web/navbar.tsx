@@ -7,11 +7,11 @@ import { useConvexAuth } from 'convex/react';
 import { authClient } from '@/lib/auth-client';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
-import SearchInput from './search';
 
 const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const router = useRouter();
+  const session = authClient.useSession();
 
   return (
     <nav className='w-full  py-5 flex items-center justify-between'>
@@ -37,8 +37,12 @@ const Navbar = () => {
 
       <div className='flex items-center gap-2'>
         <div className='hidden md:block mr-2'>
-          <SearchInput />
-          {/* Welcome {authClient.useSession().data?.user?.name} */}
+          {/* <SearchInput /> */}
+          {isAuthenticated ? (
+            <p>Welcome back {session.data?.user?.name}</p>
+          ) : (
+            <p>Welcome guest</p>
+          )}
         </div>
 
         {isLoading ? null : isAuthenticated ? (

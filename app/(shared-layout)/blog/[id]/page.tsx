@@ -1,5 +1,4 @@
 import { buttonVariants } from '@/components/ui/button';
-import { Id } from '@/convex/_generated/dataModel';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,8 +6,8 @@ import { fetchQuery, preloadQuery } from 'convex/nextjs';
 import { api } from '@/convex/_generated/api';
 import { Separator } from '@/components/ui/separator';
 import { Suspense } from 'react';
-import { PostPresence } from '@/components/web/PostPresence';
-import { CommentSection } from '@/components/web/CommentSection';
+import { PostPresence } from '@/components/web/post-presence';
+import { CommentSection } from '@/components/web/comment-section';
 import { getToken } from '@/lib/auth-server';
 import { redirect } from 'next/navigation';
 import BlogDetailSkeleton from '@/components/web/blog-detail-skeleton';
