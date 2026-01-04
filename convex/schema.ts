@@ -7,11 +7,14 @@ export default defineSchema({
     content: v.string(),
     authorId: v.string(),
     imageUrl: v.optional(v.id('_storage')),
+    comments: v.optional(v.array(v.id('comments'))),
   }),
 
-  users: defineTable({
-    name: v.string(),
-    email: v.string(),
-    password: v.string(),
+  comments: defineTable({
+    id: v.id('posts'),
+    postId: v.id('posts'),
+    body: v.string(),
+    authorId: v.string(),
+    authorName: v.string(),
   }),
 });

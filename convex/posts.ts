@@ -21,6 +21,7 @@ export const createPost = mutation({
       content: args.content,
       authorId: user._id,
       imageUrl: args.imageUrl,
+      comments: [],
     });
     return newPost;
   },
@@ -56,5 +57,27 @@ export const generateImageUploadUrl = mutation({
     }
 
     return await ctx.storage.generateUploadUrl();
+  },
+});
+
+export const getPostById = query({
+  args: {
+    id: v.id('posts'),
+  },
+  handler: async (ctx, args) => {
+    const post = await ctx.db.get(args.id);
+    if (!post) {
+      throw new ConvexError('Post not found');
+    }
+
+    const resolvedImageUrl =
+      post?.imageUrl !== undefined
+        ? await ctx.storage.getUrl(post.imageUrl)
+        : null;
+
+    return {
+      ...post,
+      imageUrl: resolvedImageUrl,
+    };
   },
 });

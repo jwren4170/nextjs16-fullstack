@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { LoadingSkeleton } from '@/components/web/loading-skeleton';
+import { BlogListSkeleton } from '@/components/web/blog-list-skeleton';
 import { api } from '@/convex/_generated/api';
 import { fetchQuery } from 'convex/nextjs';
 import { Metadata } from 'next';
@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Blog | Next.js 16 Tutorial',
+  title: 'Blog | NextPro',
   description: 'Read our latest articles and insights.',
   category: 'Web development',
   authors: [{ name: 'Jan marshal' }],
@@ -29,7 +29,7 @@ export default function Blog() {
         </p>
       </div>
 
-      <Suspense fallback={<LoadingSkeleton />}>
+      <Suspense fallback={<BlogListSkeleton />}>
         <LoadBlogList />
       </Suspense>
     </div>

@@ -1,6 +1,6 @@
 import { Skeleton } from '../ui/skeleton';
 
-export function LoadingSkeleton() {
+export function BlogListSkeleton() {
   return (
     <div className='grid gap-6 md:grid-cols-3 lg:grid-cols-3'>
       {[...Array(3)].map((_, i) => (

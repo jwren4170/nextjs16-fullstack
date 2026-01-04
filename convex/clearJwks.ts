@@ -6,10 +6,14 @@ export const listJwks = internalQuery({
   args: {},
   handler: async (ctx) => {
     try {
-      const jwks = await ctx.runMutation(components.betterAuth.adapter.list, {
+      const jwks = await ctx.runQuery(components.betterAuth.adapter.findMany, {
         model: 'jwks',
+        paginationOpts: {
+          cursor: null,
+          numItems: 100,
+        },
       });
-      return { count: jwks.length, entries: jwks };
+      return { count: jwks.page.length, entries: jwks.page };
     } catch (error) {
       return { error: String(error), count: 0, entries: [] };
     }
@@ -21,21 +25,28 @@ export const clearAllJwks = internalMutation({
   args: {},
   handler: async (ctx) => {
     try {
-      const jwks = await ctx.runMutation(components.betterAuth.adapter.list, {
+      const jwks = await ctx.runQuery(components.betterAuth.adapter.findMany, {
         model: 'jwks',
+        paginationOpts: {
+          cursor: null,
+          numItems: 100,
+        },
       });
 
-      for (const entry of jwks) {
-        await ctx.runMutation(components.betterAuth.adapter.delete, {
+      await ctx.runMutation(components.betterAuth.adapter.deleteMany, {
+        input: {
           model: 'jwks',
-          key: entry._id,
-        });
-      }
+          where: [],
+        },
+        paginationOpts: {
+          cursor: null,
+          numItems: 100,
+        },
+      });
 
-      return { success: true, deleted: jwks.length };
+      return { success: true, deleted: jwks.page.length };
     } catch (error) {
       return { success: false, error: String(error) };
     }
   },
 });
-
